@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Registro from '../src/Pages/Registro';
 
 export default function App() {
