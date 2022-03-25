@@ -1,10 +1,17 @@
 import React from "react";
-
+import "../CSS/Registro.css"
 function Input(){
     return(
         <>
-            <h3>{this.props.InputTitle}</h3>
-            <input className={this.props.className} type={this.props.type} name={this.props.name} placeholder={this.props.placeholder} onChange={this.props.onChange} value={this.props.value} required={this.props.required} />
+            <h4>{this.props.InputTitle}</h4>
+            <input
+                      type={this.props.type}
+                      className="hijo form-control"
+                      placeholder={this.props.placeholder}
+                      aria-label={this.props.arialLabel}
+                      required={this.props.required}
+                      onChange={this.props.onChange}
+             />
         </>
     )
 }

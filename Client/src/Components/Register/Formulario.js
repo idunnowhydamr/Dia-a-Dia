@@ -1,5 +1,5 @@
 import React from "react";
-import "../CSS/Registro.css"
+import "../../CSS/Registro.css"
 
 function Formulario() {
   return (
@@ -64,7 +64,7 @@ function Formulario() {
                       aria-label="Usuario" />
               </div>
               <div class="btn-group m-3 col-sm-5 d-flex justify-content-center">
-                  <a href="www.hola.com" class="p-4 text-center btn btn-dark m-2 rounded-pill" aria-current="page">
+                  <a href="www.hola.com" className="p-4 text-center btn btn-dark m-2 rounded-pill" aria-current="page">
                       Siguiente
                   </a>
                   <a href="www.hola.com" class="p-4 text-center btn btn-dark m-2 rounded-pill">
