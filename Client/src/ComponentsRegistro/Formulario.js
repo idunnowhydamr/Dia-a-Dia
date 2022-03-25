@@ -1,19 +1,34 @@
-import React from "react";
+import React, { Component }  from "react";
 import "../CSS/Registro.css"
+import PropsFormulario from "../ComponentsRegistro/PropsFormulario.json"
 
-function Formulario() {
+class Formulario extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            titulo:"Nombre 1",
+            type:"text",
+            className:"hijo form-control",
+            placeholder:"Ingresar Primer nombre",
+            arialabel:"Primer nombre",
+        };
+      }
+    render(){
+
+    
   return (
     <><div className="m-5 justify-content-center">
           <h1 className="text-center">Registro</h1>
       </div><div className="padre row m-5 justify-content-center">
-              <div className="m-3 col-sm-5">
-                  <h4>Nombre 1</h4>
+      <div className="m-3 col-sm-5">
+                  <h4>{this.state.titulo}</h4>
                   <input
-                      type="text"
-                      className="hijo form-control"
-                      placeholder="Ingresar Primer nombre"
-                      aria-label="Primer nombre" />
+                      type={this.state.type}
+                      className={this.state.className}
+                      placeholder={this.state.placeholder}
+                      aria-label={this.state.arialabel} />
               </div>
+              
               <div className="m-3 col-sm-5">
                   <h4>Nombre 2</h4>
                   <input
@@ -73,6 +88,7 @@ function Formulario() {
               </div>
           </div></>
   );
+    }
 }
 
 export default Formulario;
