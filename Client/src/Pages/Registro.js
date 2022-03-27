@@ -1,5 +1,5 @@
 import React from "react";
-import Formulario from "../ComponentsRegistro/Formulario";
+import Formulario from "../Components/Register/Formulario.js";
 
 function Registro(){
     return (
