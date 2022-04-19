@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import "../../CSS/style.css";
 import Input from "../Commons/Input.js";
 import Button from "../Commons/Button.js";
@@ -30,7 +30,7 @@ class Form extends React.Component {
   render() {
     return (
       <div className="m-5 content justify-content-center">
-        <h1 className="text-center">Iniciar Sesion</h1>
+        <h1 className="title text-center">Iniciar Sesion</h1>
         <div className="padre row m-5 justify-content-center">
         <Input
           name="emailUser"
