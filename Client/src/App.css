@@ -1,5 +1,7 @@
 body{
-  background-color: #00758C;
+  background: rgb(20,13,139);
+background: linear-gradient(90deg, rgba(20,13,139,1) 0%, rgba(30,47,191,1) 51%, rgba(20,13,139,1) 100%);
+overflow: hidden;
 }
 
 .App {
