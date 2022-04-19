@@ -98,7 +98,7 @@ class Form extends React.Component {
         />
         <div className="btn-group m-3 col-sm-5 d-flex justify-content-center">
           <Button buttonText="Registrar" onClick={this.handleSubmit}/>
-          <Button buttonText="Volver"/>
+          <Button buttonText="Volver" direccion="/"/>
         </div>
         </div>
         

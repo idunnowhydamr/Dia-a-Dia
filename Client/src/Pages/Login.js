@@ -1,9 +1,10 @@
 import React from "react";
 import Form from "../Components/Login/Form";
-
+import imageForm from "../Images/form.svg";
 function Login() {
   return (
     <>
+      <div className="justify-content-center">
       <div className="cover">
         <div className="wave w1"></div>
         <div className="wave w2"></div>
@@ -14,12 +15,12 @@ function Login() {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non aut impedit ea debitis ab, amet ipsa ipsum odio magnam voluptatem dicta praesentium obcaecati facilis, nulla fugiat itaque repellendus eaque tempora.</p>
                 </div>
                 <div class="container__vector">
-                    <img src="images/undraw_Code_thinking_re_gka2.svg" alt=""/>
+                    <img src={imageForm} alt=""/>
                 </div>
             </div>
       </div>
-
       <Form />
+      </div>
     </>
   );
 }
