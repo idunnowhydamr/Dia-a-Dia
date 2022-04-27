@@ -13,6 +13,7 @@ function Login() {
           <div class="container__info">
             <h1>DIA A</h1>
             <h2>DIA</h2>
+         
             <Info data = {dataProyect}/>
           </div>
           <Form />

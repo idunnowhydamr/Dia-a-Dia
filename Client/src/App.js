@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Register from '../src/Pages/Register';
 import Login from '../src/Pages/Login';
+import Index from '../src/Pages/Index';
 
 export default function App() {
   return (
@@ -9,7 +10,7 @@ export default function App() {
       <Switch>
       <Route exact path="/" component={Login} />
       <Route exact path="/Register" component={Register} />
-      
+      <Route exact path="/Index" component={Index} />
       </Switch>
       
   );
