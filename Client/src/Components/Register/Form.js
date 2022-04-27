@@ -1,110 +1,117 @@
-import React from "react";
-import "../../CSS/style.css";
-import Input from "../Commons/Input.js";
+import React, {useState} from "react";
 import Button from "../Commons/Button.js";
-class Form extends React.Component {
-  //Se crea el constructor y se inicializan variables
-  constructor(props) { 
-    super(props);
-    this.state = {
-      form: {
-        nombre1: "",
-        nombre2: "",
-        apellido1: "",
-        apellido2: "",
-        email: "",
-        password: "",
-        user: "",
-      }
-    };
-  }
-  
-  //Función asincrona para leer las variables de los input
-  handleChange = async (e) => {
-    e.persist();//Returns a Promise that resolves to true if the user agent is able to persist your site's storage.(StorageManager)
-    await this.setState({ //Se actualiza el estado
-      form: {
-        ...this.state.form,
-        [e.target.name]: e.target.value,
-      },
-    });
+import Input from "../Commons/Input.js";
 
-  };
-  render() {
-    return (
-      <div className="m-5 justify-content-center">
-        <h1 className="text-center">Registro</h1>
-        <div className="padre row m-5 justify-content-center">
+import { Formulario, Title } from "../../Elements/Formulario";
+
+const Form = () => {
+  const [user, userChange] = useState({field: '', valid: null});
+  const [password, passwordChange] = useState({field: '', valid: null});
+  const [email, emailChange] = useState({field: '', valid: null});
+  const [name1, name1Change] = useState({field: '', valid: null});
+  const [name2, name2Change] = useState({field: '', valid: null});
+  const [lastName1, lastName1Change] = useState({field: '', valid: null});
+  const [lastName2, lastName2Change] = useState({field: '', valid: null});
+  
+
+  const expressions = {
+		user: /^[a-zA-Z0-9_-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+		name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+		password: /^.{4,12}$/, // 4 a 12 digitos.
+		email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+		phone: /^\d{7,14}$/ // 7 a 14 numeros.
+	}
+  return (
+    <main className="  content justify-content-center">
+      <Title>Registro</Title>
+      <Formulario action="" className="row justify-content-center">
         <Input
-          name="nombre1"
+          label="Usuario"
+          placeholder="Jhon123"
           type="text"
-          inputTitle="Nombre 1"
-          placeholder="Ingresar Primer Nombre"
-          arialLabel="Primer Nombre"
-          required="required"
-          onChange={this.handleChange}
-        />
-        <Input
-          name="nombre2"
-          type="text"
-          inputTitle="Nombre 2"
-          placeholder="Ingresar Segundo Nombre"
-          arialLabel="Segundo Nombre"
-          onChange={this.handleChange}
-        />
-        <Input
-          name="apellido1"
-          type="text"
-          inputTitle="Apellido 1"
-          placeholder="Ingresar Primer Apellido"
-          arialLabel="Primer Apellido"
-          required="required"
-          onChange={this.handleChange}
-        />
-         <Input
-          name="apellido2"
-          type="text"
-          inputTitle="Apellido 2"
-          placeholder="Ingresar Segundo Apellido"
-          arialLabel="Segundo Apellido"
-          onChange={this.handleChange}
-        />
-        <Input
-          name="email"
-          type="email"
-          inputTitle="Correo"
-          placeholder="Ingresar Correo Electronico"
-          arialLabel="Correo Electronico"
-          required="required"
-          onChange={this.handleChange}
-        />
-        <Input
-          name="password"
-          type="password"
-          inputTitle="Contraseña"
-          placeholder="Ingresar Contraseña Nueva"
-          arialLabel="Contraseña"
-          required="required"
-          onChange={this.handleChange}
-        />
-        <Input
           name="user"
-          type="text"
-          inputTitle="Usuario"
-          placeholder="Ingresar Usuario Nuevo"
-          arialLabel="Usuario"
-          required="required"
-          onChange={this.handleChange}
+          bugLegend="El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo."
+          regularExpression={expressions.user}
+          validationIcon={user.valid}
+          estate={user.field}
+          estateChange={userChange}
         />
-        <div className="btn-group m-3 col-sm-5 d-flex justify-content-center">
-          <Button buttonText="Registrar" onClick={this.handleSubmit}/>
-          <Button buttonText="Volver"/>
+        <Input
+          label="Correo"
+          placeholder="Ingrese el Correo"
+          type="email"
+          name="email"
+          bugLegend="El correo solo puede contener letras, numeros, puntos, guiones y guion bajo."
+          regularExpression={expressions.email}
+          validationIcon={email.valid}
+          estate={email.field}
+          estateChange={emailChange}
+        />
+
+        <Input
+          label="Contraseña"
+          placeholder="Ingrese la Contraseña"
+          type="password"
+          name="password"
+          bugLegend="La contraseña tiene que ser de 4 a 12 dígitos."
+          regularExpression={expressions.password}
+          validationIcon={password.valid}
+          estate={password.field}
+          estateChange={passwordChange}
+        />
+
+        <Input
+          label="Nombre 1"
+          placeholder="Ingrese su primer nombre"
+          type="name"
+          name="name1"
+          bugLegend="El nombre solo puede contener letras y espacios."
+          regularExpression={expressions.name}
+          validationIcon={name1.valid}
+          estate={name1.field}
+          estateChange={name1Change}
+        />
+        <Input
+          label="Nombre 2"
+          placeholder="Ingrese su segundo nombre"
+          type="name"
+          name="name2"
+          bugLegend="El nombre solo puede contener letras y espacios."
+          regularExpression={expressions.name}
+          validationIcon={name2.valid}
+          estate={name2.field}
+          estateChange={name2Change}
+        />
+        <Input
+          label="Apellido 1"
+          placeholder="Ingrese su primer apellido"
+          type="name"
+          name="lastName1"
+          bugLegend="El apellido solo puede contener letras y espacios."
+          regularExpression={expressions.name}
+          validationIcon={lastName1.valid}
+          estate={lastName1.field}
+          estateChange={lastName1Change}
+        />
+        <Input
+          label="Apellido 2"
+          placeholder="Ingrese su segundo apellido"
+          type="name"
+          name="lastName2"
+          bugLegend="El apellido solo puede contener letras y espacios."
+          regularExpression={expressions.name}
+          validationIcon={lastName2.valid}
+          estate={lastName2.field}
+          estateChange={lastName2Change}
+        />
+        <div className="btn-group m-2 justify-content-center">
+          <Button buttonText="Registrar" type="submit" />
+          <Button buttonText="Regresar" direccion="/" />
         </div>
-        </div>
-        
-      </div>
-    );
-  }
-}
+      </Formulario>
+    </main>
+  );
+};
 
 export default Form;
+

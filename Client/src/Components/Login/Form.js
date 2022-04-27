@@ -1,63 +1,53 @@
-  import React from "react";
-import "../../CSS/style.css";
-import Input from "../Commons/Input.js";
+import React, {useState} from "react";
 import Button from "../Commons/Button.js";
+import Input from "../Commons/Input.js";
 
-class Form extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      form: {
-        email: "",
-        password: "",
-        user: "",
-      }
-    };
-  }
+import { Formulario, Title } from "../../Elements/Formulario";
 
-  handleChange = async (e) => {
-    e.persist();
+const Form = () => {
+  const [user, userChange] = useState({field: '', valid: null});
+  const [password, passwordChange] = useState({field: '', valid: null});
 
-    await this.setState({
-      form: {
-        ...this.state.form,
-        [e.target.name]: e.target.value,
-      },
-    });
-
-    console.log(this.state.form);
-  };
-  render() {
-    return (
-      <div className="m-5 content justify-content-center">
-        <h1 className="title text-center">Iniciar Sesion</h1>
-        <div className="padre row m-5 justify-content-center">
+  const expressions = {
+		user: /^[a-zA-Z0-9_-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+		name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+		password: /^.{4,12}$/, // 4 a 12 digitos.
+		email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+		phone: /^\d{7,14}$/ // 7 a 14 numeros.
+	}
+  return (
+    <main className="ml-5  content justify-content-center">
+      <Title>Iniciar Sesion</Title>
+      <Formulario action="" className="row justify-content-center">
         <Input
-          name="emailUser"
+          label="Usuario"
+          placeholder="Jhon123"
           type="text"
-          inputTitle="Correo o Usuario"
-          placeholder="Ingresar el Correo"
-          arialLabel="email"
-          required="required"
-          onChange={this.handleChange}
+          name="user"
+          bugLegend="El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo."
+          regularExpression={expressions.user}
+          validationIcon={user.valid}
+          estate={user.field}
+          estateChange={userChange}
         />
         <Input
-          name="password"
+          label="Contraseña"
+          placeholder="Ingrese la Contraseña"
           type="password"
-          inputTitle="Contraseña"
-          placeholder="Ingresar la Contraseña"
-          arialLabel="password"
-          onChange={this.handleChange}
+          name="password"
+          bugLegend="La contraseña tiene que ser de 4 a 12 dígitos."
+          regularExpression={expressions.password}
+          validationIcon={password.valid}
+          estate={password.field}
+          estateChange={passwordChange}
         />
-        <div className="btn-group m-3 col-sm-5 d-flex justify-content-center">
-          <Button buttonText="Iniciar" onClick={this.handleSubmit}/>
-          <Button buttonText="Registrar"/>
+        <div className="btn-group m-2 justify-content-center">
+          <Button buttonText="Iniciar" type="submit" />
+          <Button buttonText="Registrar" direccion="/Register" />
         </div>
-        </div>
-        
-      </div>
-    );
-  }
-}
+      </Formulario>
+    </main>
+  );
+};
 
 export default Form;
