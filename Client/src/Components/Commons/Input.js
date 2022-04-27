@@ -1,22 +1,62 @@
 import React from "react";
 import "../../CSS/style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Input(props) {
+import {
+  Label,
+  GroupInput,
+  BugLegend,
+  ValidationIcon,
+  InputElement
+} from "../../Elements/Formulario";
+
+import {
+  faCheckCircle,
+  faTimesCircle
+} from "@fortawesome/free-solid-svg-icons";
+
+const Input = ({validationIcon, estate, estateChange,label, placeholder, type, name, bugLegend, regularExpression}) => {
+  const onChange = (e) => {
+    //Para sobreescribir el esatdo, agregado el objeto de estado anterior
+    estateChange({...estate, field: e.target.value});
+  }
+
+  const validation = () => {
+    //Se ejecuta si exite una expresion regular
+    if(regularExpression){
+      //.tes() permite comprobar un valor contra la formula
+      if(regularExpression.test(estate)){
+        estateChange({...estate, valid: 'true'});
+      }else{
+        estateChange({...estate, valid: 'false'});
+      }
+    }
+
+  }
   return (
-    <>
-      <div className="m-3 col-sm-5">
-              <h4>{props.inputTitle}</h4>
-              <input
-                name={props.name}
-                type={props.type}
-                className="hijo form-control"
-                placeholder={props.placeholder}
-                aria-label={props.arialLabel}
-                required={props.required}
-                onChange={props.onChange}
-              />
-      </div>
-    </>
+    <div>
+          <Label htmlFor="" valid={validationIcon} >{label}</Label>
+          <GroupInput>
+            <InputElement 
+            className="form-control" 
+            type={type} placeholder={placeholder} 
+            id={name}
+            value={estate}
+            onChange={onChange}
+            //Se ejecuta cuando se levanta el dedo de la tecla
+            onKeyUp={validation}
+            onBlur={validation}
+            valid={validationIcon}
+            />
+            <ValidationIcon 
+            icon={validationIcon === 'false' ? faTimesCircle : faCheckCircle} 
+            valid={validationIcon}
+            />
+          </GroupInput>
+          <BugLegend valid={validationIcon}>
+              {bugLegend}
+          </BugLegend>
+    </div>
   );
 }
 

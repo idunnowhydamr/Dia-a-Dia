@@ -1,23 +1,30 @@
 import React from "react";
-import Info from "../Components/Commons/Info.js";
+import Info from "../Components/Login/Info.js";
 import Form from "../Components/Login/Form";
 import dataProyect from "../utils/mocks/dataProyect.js";
-import imageForm from "../Images/form.svg";
+
+import {
+  Cover,
+  ContainerCover,
+  ContainerInfo,
+  CoverH1,
+  CoverH2} from "../Elements/LoginElements";
+
 function Login() {
   return (
     <>
-      <div className="cover">
+      <Cover>
         <div className="wave w1"></div>
         <div className="wave w2"></div>
-        <div class="container__cover">
-          <div class="container__info">
-            <h1>DIA A</h1>
-            <h2>DIA</h2>
+        <ContainerCover>
+          <ContainerInfo>
+            <CoverH1>DIA A</CoverH1>
+            <CoverH2>DIA</CoverH2>
             <Info data={dataProyect} />
-          </div>
+          </ContainerInfo>
           <Form />
-        </div>
-      </div>
+        </ContainerCover>
+      </Cover>
     </>
   );
 }

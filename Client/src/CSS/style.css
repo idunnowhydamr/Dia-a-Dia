@@ -1,34 +1,8 @@
-.text-center {
-    text-align: center!important;
-}
 
-.padre{
-    color:#fff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 16px ;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.138);
-    
 
-}
-
-.hijo{
-    background: rgba(255, 255, 255, 0);
-}
-
-::placeholder {
-     color: black; font-weight: 400; 
-    font-size: 1.2em;
-
-  }
-
-h1{
-    color: white;
-}  
-
-.cover{
-    margin-bottom:190px;
-    height: 100px;
+.demo-app-calendar{
+    margin: 0 auto;
+    max-width: 200px;
 }
 .wave{
     width: 6000px;
@@ -73,48 +47,7 @@ h1{
     }
 }
 
-.container__cover{
-    max-width: 1200px;
-    margin: 12.5% auto;
-    padding-left: 5px;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    background-size: cover;
-    background-position: bottom;
-}
 
-
-.cover .container__info{
-    max-width: 400px;
-    margin-top: 20px;
-    z-index: 2;
-}
-
-.cover .container__info{
-    max-width: 400px;
-    margin-top: 40px;
-    z-index: 2;
-}
-
-.cover h1{
-    max-width: 400px;
-    font-size: 60px;
-    font-weight: 900;
-    color: #000;
-}
-
-.cover h2{
-    font-size: 60px;
-    font-weight: 900;
-    color: #FEBA0B;
-    margin-top: -30px;
-}
-
-.cover p{
-    margin-top: 10px;
-    color: #fff;
-}
 
 .container__vector{
     position: relative;
@@ -141,6 +74,3 @@ h1{
     }
 }  
   
-.title{
-    margin-left:22.5% ;
-}
