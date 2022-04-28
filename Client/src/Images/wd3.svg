@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: 50px; overflow: hidden;">
+<g stroke-width="20" stroke="blue" style="margin: 50px;"> 
+<line x1="10" y1="90" x2="10" y2="127"   />
+<line x1="35" y1="60" x2="35" y2="135"  />
+<line x1="60" y1="20" x2="60" y2="117"  />
+<line x1="-200" y1="0" x2="35" y2="140" style="stroke:white;stroke-width:15" />
+<line x1="200" y1="-50" x2="40" y2="140" style="stroke:white;stroke-width:15" />
+</g>
+<polyline points="-10 115, 35 150, 100 75"
+  style="fill:none; stroke:gold;stroke-width:10" />
+  <polygon points="107.5 65, 101 90, 80 80" style="fill:gold;stroke:gold;stroke-width:2" />
+   <text x="0" y="170" fill="blue" stroke="Blue" stroke-width="1"  font-size="18">Dia</text>
+   <text x="27.5" y="180" fill="gold" stroke="gold" stroke-width="1" font-size="25">A</text>
+   <text x="47" y="170" fill="blue" stroke="Blue" stroke-width="1"  font-size="18">Dia</text>
+</svg>
