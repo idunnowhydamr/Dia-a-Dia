@@ -62,17 +62,6 @@
     animation: move_vector 5s ease-in-out infinite;
 }
 
-<<<<<<< HEAD
-.title{
-    margin-left:22.5% ;
-}
-
-button{
-    width: 12em;
-}
-
-
-=======
 @keyframes move_vector{
     0%{
         transform: translateY(10px);
@@ -85,4 +74,3 @@ button{
     }
 }  
   
->>>>>>> e34efcd585517e4b66ff3a810eb1305baf56d6f1

@@ -2,11 +2,10 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Register from '../src/Pages/Register';
 import Login from '../src/Pages/Login';
-<<<<<<< HEAD
-import Index from '../src/Pages/Index';
-=======
 import Calendar from '../src/Pages/Calendar';
->>>>>>> e34efcd585517e4b66ff3a810eb1305baf56d6f1
+import Development from '../src/Pages/Development'
+import User from '../src/Pages/User'
+import Graphics from '../src/Pages/Graphics'
 
 export default function App() {
   return (
@@ -14,12 +13,11 @@ export default function App() {
       <Switch>
       <Route exact path="/" component={Login} />
       <Route exact path="/Register" component={Register} />
-<<<<<<< HEAD
-      <Route exact path="/Index" component={Index} />
-=======
       <Route exact path="/Calendar" component={Calendar} />
+      <Route exact path="/Development" component={Development}/>
+      <Route exact path="/User" component={User}/>
+      <Route exact path="/Graphics" component={Graphics}/>
       
->>>>>>> e34efcd585517e4b66ff3a810eb1305baf56d6f1
       </Switch>
       
   );
