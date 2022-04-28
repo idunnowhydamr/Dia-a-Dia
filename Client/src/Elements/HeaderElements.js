@@ -1,5 +1,6 @@
 //Sirve para poner estilos a cada componente
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
 const PrincipalHeader = styled.header`
@@ -50,12 +51,16 @@ const Ul = styled.ul`
 
 const Li = styled.li`
     margin: 0px 20px;
+    list-style-type: none;
 `;
 
-const A = styled.a`
+
+
+const LinkTo = styled(Link)`
     color: #fff;
     font-size: 14px;
     outline: none;
+    text-decoration: none;
 `;
 
 export {
@@ -67,5 +72,5 @@ export {
     Nav,
     Ul,
     Li,
-    A
+    LinkTo
 };

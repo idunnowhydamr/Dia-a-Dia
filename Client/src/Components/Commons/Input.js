@@ -35,7 +35,7 @@ const Input = ({validationIcon, estate, estateChange,label, placeholder, type, n
   }
   return (
     <div>
-          <Label htmlFor="" valid={validationIcon} >{label}</Label>
+          <Label valid={validationIcon} >{label}</Label>
           <GroupInput>
             <InputElement 
             className="form-control" 

@@ -1,6 +1,5 @@
 import DiaADiaImg from "../../Images/iconDiaADia.png"
 import React from "react";
-import { Link } from "react-router-dom";
 import {
     PrincipalHeader,
     HeaderContainer,
@@ -10,7 +9,7 @@ import {
     Nav,
     Ul,
     Li,
-    A} from "../../Elements/HeaderElements";
+    LinkTo} from "../../Elements/HeaderElements";
 function Header(){
     return(
         <>
@@ -22,10 +21,10 @@ function Header(){
             <NavContainer>
                 <Nav>
                     <Ul>
-                        <Li><Link to="">Progreso</Link></Li>
-                        <Li><Link to="" href="#">Graficos</Link></Li>
-                        <Li><Link to="">Recordatorios</Link></Li>
-                        <Li><Link to="">Perfil</Link></Li>
+                        <Li><LinkTo to="/Progress">Progreso</LinkTo></Li>
+                        <Li><LinkTo to="/Graphics">Graficos</LinkTo></Li>
+                        <Li><LinkTo to="/Calendar">Recordatorios</LinkTo></Li>
+                        <Li><LinkTo to="/User">Perfil</LinkTo></Li>
                     </Ul>
                 </Nav>
                 <div class="btn__menu" id="btn_menu"><i class="fas fa-bars"></i></div>
