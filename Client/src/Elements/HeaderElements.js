@@ -9,8 +9,7 @@ const PrincipalHeader = styled.header`
     top: 0;
     right: 0;
     z-index: 100;
-    background: rgb(28,28,28);
-    background: linear-gradient(90deg, rgba(28,28,28,0.9026961126247374) 17%, rgba(0,0,0,0.8578781854538691) 55%);
+    background: rgba(0,0,0,0.8578781854538691);
 `;
 
 const HeaderContainer = styled.div`
@@ -56,6 +55,7 @@ const Li = styled.li`
 const A = styled.a`
     color: #fff;
     font-size: 14px;
+    outline: none;
 `;
 
 export {

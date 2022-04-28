@@ -1,4 +1,6 @@
+import DiaADiaImg from "../../Images/iconDiaADia.png"
 import React from "react";
+import { Link } from "react-router-dom";
 import {
     PrincipalHeader,
     HeaderContainer,
@@ -15,15 +17,15 @@ function Header(){
     <PrincipalHeader>
         <HeaderContainer>
             <Logo>
-                <Img src="../../Images/iconDiaADia.png" alt=""/>
+                <Img src={DiaADiaImg}  alt=""/>
             </Logo>
             <NavContainer>
                 <Nav>
                     <Ul>
-                        <Li><A href="#" class="select">HOME</A></Li>
-                        <Li><A href="#">ABOUT US</A></Li>
-                        <Li><A href="#">HOW IT WORK</A></Li>
-                        <Li><A href="#">CONTACT US</A></Li>
+                        <Li><Link to="">Progreso</Link></Li>
+                        <Li><Link to="" href="#">Graficos</Link></Li>
+                        <Li><Link to="">Recordatorios</Link></Li>
+                        <Li><Link to="">Perfil</Link></Li>
                     </Ul>
                 </Nav>
                 <div class="btn__menu" id="btn_menu"><i class="fas fa-bars"></i></div>
