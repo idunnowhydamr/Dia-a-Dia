@@ -1,4 +1,5 @@
 import React from "react";
+import wd3 from '../../Images/wd3.svg'
 import {
     PrincipalHeader,
     HeaderContainer,
@@ -15,7 +16,7 @@ function Header(){
     <PrincipalHeader>
         <HeaderContainer>
             <Logo>
-                <Img src="../../Images/iconDiaADia.png" alt=""/>
+                <Img src={wd3} alt=""/>
             </Logo>
             <NavContainer>
                 <Nav>
