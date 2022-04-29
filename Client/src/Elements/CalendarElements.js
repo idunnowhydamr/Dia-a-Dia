@@ -10,29 +10,11 @@ const CalendarContainer = styled.div`
 `;
 
 const ObjectiveContainer = styled.div`
-  padding: 0;
-  width: auto;
   position: absolute;
   z-index: 2;
-  border: none;
-  margin: 6.5rem;
-  background: rgb(0, 252, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 252, 255, 0.6337885495995272) 0%,
-    rgba(16, 0, 255, 0.7542367288712359) 100%
-  );
-  box-shadow: 3px 0px 19px 8px rgba(0, 0, 0, 0.71);
-  display: flex;
-  height: auto;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-radius: 10px;
 `;
 
 const ObjectiveTitle = styled.h1`
-  background: rgb(0, 0, 0);
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.8830882694874825) 0%,

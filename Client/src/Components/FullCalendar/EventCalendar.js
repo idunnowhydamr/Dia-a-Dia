@@ -5,6 +5,10 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-icons/font/bootstrap-icons.css'; // needs additional webpack config!
+import bootstrap5Plugin from '@fullcalendar/bootstrap5';
+import "bootswatch/dist/materia/bootstrap.min.css";
 import Alert from "sweetalert2";
 import {
   CalendarContainer,
@@ -48,9 +52,11 @@ class EventCalendar extends Component {
       eventData: function (eventEl) {
         let title = eventEl.getAttribute("title");
         let id = eventEl.getAttribute("data");
+        let color = eventEl.getAttribute("color");
         return {
           title: title,
           id: id,
+          color: color
         };
       },
     });
@@ -143,20 +149,21 @@ class EventCalendar extends Component {
           </Col>
 
           <Col lg={9} sm={9} md={9}>
-            <CalendarContainer id="mycalendartest">
+          <CalendarContainer id="mycalendartest">
               <FullCalendar
-                plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-                locale={esLocale}
+               plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin,bootstrap5Plugin]}
+              locale={esLocale}
                 defaultView="dayGridMonth"
                 headerToolbar={{
                   left: "prev,next today",
                   center: "title",
-                  right: "dayGridMonth,timeGridWeek,timeGridDay",
+                  right: "dayGridMonth,timeGridWeek,timeGridDay"
                 }}
                 rerenderDelay={10}
                 eventDurationEditable={false}
                 editable={true}
                 droppable={true}
+               themeSystem="bootstrap5"
                 ref={this.calendarComponentRef}
                 weekends={this.state.calendarWeekends}
                 events={this.state.calendarEvents}

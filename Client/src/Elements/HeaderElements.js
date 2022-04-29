@@ -30,7 +30,7 @@ const Logo = styled.div`
 `;
 
 const Img = styled.img`
-    width: 150px;
+    width: 400px;
 `;
 
 const NavContainer = styled.div`
@@ -50,8 +50,13 @@ const Ul = styled.ul`
 `;
 
 const Li = styled.li`
-    margin: 0px 20px;
-    list-style-type: none;
+list-style-type: none;
+width: 100%;
+height: 100%;
+padding: 30px 5px 0 5px;
+    &:hover{
+        background: orange;
+    }
 `;
 
 
@@ -61,6 +66,7 @@ const LinkTo = styled(Link)`
     font-size: 14px;
     outline: none;
     text-decoration: none;
+    font-size:20px;
 `;
 
 export {

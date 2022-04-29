@@ -1,5 +1,4 @@
 
-
 .demo-app-calendar{
     margin: 0 auto;
     max-width: 200px;
@@ -71,6 +70,7 @@
     }
     100%{
         transform: translateY(10px);
+        
     }
 }  
   

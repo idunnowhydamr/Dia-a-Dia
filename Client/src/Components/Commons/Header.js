@@ -1,4 +1,4 @@
-import DiaADiaImg from "../../Images/iconDiaADia.png"
+import DiaADiaImg from "../../Images/icon.svg"
 import React from "react";
 import {
     PrincipalHeader,
