@@ -1,5 +1,6 @@
 //Sirve para poner estilos a cada componente
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
 const PrincipalHeader = styled.header`
@@ -9,8 +10,7 @@ const PrincipalHeader = styled.header`
     top: 0;
     right: 0;
     z-index: 100;
-    background: rgb(28,28,28);
-    background: linear-gradient(90deg, rgba(28,28,28,0.9026961126247374) 17%, rgba(0,0,0,0.8578781854538691) 55%);
+    background: rgba(0,0,0,0.8578781854538691);
 `;
 
 const HeaderContainer = styled.div`
@@ -30,7 +30,7 @@ const Logo = styled.div`
 `;
 
 const Img = styled.img`
-    width: 150px;
+    width: 400px;
 `;
 
 const NavContainer = styled.div`
@@ -50,12 +50,23 @@ const Ul = styled.ul`
 `;
 
 const Li = styled.li`
-    margin: 0px 20px;
+list-style-type: none;
+width: 100%;
+height: 100%;
+padding: 30px 5px 0 5px;
+    &:hover{
+        background: orange;
+    }
 `;
 
-const A = styled.a`
+
+
+const LinkTo = styled(Link)`
     color: #fff;
     font-size: 14px;
+    outline: none;
+    text-decoration: none;
+    font-size:20px;
 `;
 
 export {
@@ -67,5 +78,5 @@ export {
     Nav,
     Ul,
     Li,
-    A
+    LinkTo
 };
