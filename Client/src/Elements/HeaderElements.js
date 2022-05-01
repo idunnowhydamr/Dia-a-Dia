@@ -62,11 +62,14 @@ padding: 30px 5px 0 5px;
 
 
 const LinkTo = styled(Link)`
-    color: #fff;
-    font-size: 14px;
     outline: none;
     text-decoration: none;
-    font-size:20px;
+    
+`;
+const A = styled.a`
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;
 `;
 
 export {
@@ -78,5 +81,6 @@ export {
     Nav,
     Ul,
     Li,
-    LinkTo
+    LinkTo,
+    A
 };

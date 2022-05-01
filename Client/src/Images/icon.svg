@@ -1,9 +1,4 @@
-<<<<<<< HEAD:Client/src/Images/wd3.svg
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-=======
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: 0px; overflow: hidden;">
->>>>>>> 64f1ac4632c16e153d49ee3d3f12cf9a4830a67c:Client/src/Images/icon.svg
 <g stroke-width="20" stroke="blue"> 
 <line x1="10" y1="90" x2="10" y2="127"   />
 <line x1="35" y1="60" x2="35" y2="135"  />
