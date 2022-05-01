@@ -3,7 +3,9 @@ import LineChart from "../Components/Graphics/LineChart";
 import BarChart from "../Components/Graphics/BarChart";
 import DoughnutChart from "../Components/Graphics/DoughnutChart";
 import Header from "../Components/Commons/Header";
+import Footer from "../Components/Commons/Footer";
 import Button from "../Components/Commons/Button";
+import dataProyect from "../utils/mocks/dataProyect"
 import { CardContainer, Container } from "../Elements/GraphicsElements";
 function Graphics() {
   return (
@@ -42,6 +44,7 @@ function Graphics() {
         </div>
       </CardContainer>
       </Container>
+      <Footer data={dataProyect}/>
     </>
   );
 }

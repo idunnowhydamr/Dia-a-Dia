@@ -1,4 +1,6 @@
 
+nav.navbar.bg-dark { --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important; }
 .demo-app-calendar{
     margin: 0 auto;
     max-width: 200px;
@@ -73,4 +75,3 @@
         
     }
 }  
-  

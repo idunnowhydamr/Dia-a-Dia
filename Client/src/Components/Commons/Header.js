@@ -1,38 +1,62 @@
-import DiaADiaImg from "../../Images/icon.svg"
-import React from "react";
+import React, { useState } from "react";
+import { Nav, Navbar } from "react-bootstrap";
+
+import "bootswatch/dist/litera/bootstrap.min.css";
+import { A, LinkTo} from "../../Elements/HeaderElements";
+
 import {
-    PrincipalHeader,
-    HeaderContainer,
-    Logo,
-    Img,
-    NavContainer,
-    Nav,
-    Ul,
-    Li,
-    LinkTo} from "../../Elements/HeaderElements";
-function Header(){
-    return(
-        <>
-    <PrincipalHeader>
-        <HeaderContainer>
-            <Logo>
-                <Img src={DiaADiaImg}  alt=""/>
-            </Logo>
-            <NavContainer>
-                <Nav>
-                    <Ul>
-                        <Li><LinkTo to="/Progress">Progreso</LinkTo></Li>
-                        <Li><LinkTo to="/Graphics">Graficos</LinkTo></Li>
-                        <Li><LinkTo to="/Calendar">Recordatorios</LinkTo></Li>
-                        <Li><LinkTo to="/User">Perfil</LinkTo></Li>
-                    </Ul>
-                </Nav>
-                <div class="btn__menu" id="btn_menu"><i class="fas fa-bars"></i></div>
-            </NavContainer>
-        </HeaderContainer>
-    </PrincipalHeader>
-        </>
-    )
-}
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+} from "reactstrap";
+
+import "../../CSS/style.css"
+
+export const Header = () => {
+  const [dropdown, setDropdown] = useState(false);
+  const abrirCerrar = () => {
+    setDropdown(!dropdown);
+  };
+
+  return (
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      className="row d-flex flex-row bg-dark"
+    >
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="navbar-nav col-md-3 justify-content-center align-items-center">
+          <LinkTo to="/Progress">
+            <A>Progreso</A>
+          </LinkTo>
+        </Nav>
+        <Nav className="navbar-nav col-md-3 justify-content-center align-items-center">
+          <LinkTo to="/Graphics">
+            <A>Graficos</A>
+          </LinkTo>
+        </Nav>
+        <Nav className="navbar-nav col-md-3 justify-content-center align-items-center">
+          <LinkTo to="/Calendar">
+            <A>Recordatorios</A>
+          </LinkTo>
+        </Nav>
+        <Nav className="navbar-nav col-md-3 justify-content-center align-items-center">
+          <Dropdown isOpen={dropdown} toggle={abrirCerrar}>
+            <DropdownToggle caret>Perfil</DropdownToggle>
+            <DropdownMenu>
+              <LinkTo to="/User">
+                <DropdownItem>Mi cuenta</DropdownItem>
+              </LinkTo>
+              <DropdownItem divider />
+              <DropdownItem>Cerrar Sesion</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+};
 
 export default Header;

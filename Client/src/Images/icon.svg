@@ -3,8 +3,6 @@
 <line x1="10" y1="90" x2="10" y2="127"   />
 <line x1="35" y1="60" x2="35" y2="135"  />
 <line x1="60" y1="20" x2="60" y2="117"  />
-<line x1="-200" y1="0" x2="35" y2="140" style="stroke:white;stroke-width:15" />
-<line x1="200" y1="-50" x2="40" y2="140" style="stroke:white;stroke-width:15" />
 </g>
 <polyline points="-10 115, 35 150, 100 75"
   style="fill:none; stroke:gold;stroke-width:10" />

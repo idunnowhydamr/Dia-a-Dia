@@ -48,11 +48,24 @@ const PInfo = styled.p`
   }
 `;
 
+const Ul = styled.ul`
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+const Li = styled.li`
+    margin: 0px 20px;
+`;
+
+
 export {
     Cover,
     ContainerCover,
     ContainerInfo,
     CoverH1,
     CoverH2,
-    PInfo
+    PInfo,
+    Ul,
+    Li
 };

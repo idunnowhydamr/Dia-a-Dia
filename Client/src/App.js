@@ -7,18 +7,18 @@ import Development from '../src/Pages/Development'
 import User from '../src/Pages/User'
 import Graphics from '../src/Pages/Graphics'
 
+
 export default function App() {
-  return (
-    
-      <Switch>
-      <Route exact path="/" component={Login} />
-      <Route exact path="/Register" component={Register} />
-      <Route exact path="/Calendar" component={Calendar} />
-      <Route exact path="/Progress" component={Development}/>
-      <Route exact path="/User" component={User}/>
-      <Route exact path="/Graphics" component={Graphics}/>
-      
-      </Switch>
-      
+  return ( 
+    <Switch>
+    <Route exact path="/" component={Login} />
+    <Route exact path="/Register" component={Register} />
+    <Route exact path="/Calendar" component={Calendar} />
+    <Route exact path="/Progress" component={Development}/>
+    <Route exact path="/User" component={User}/>
+    <Route exact path="/Graphics" component={Graphics}/>
+    </Switch>
+       
+
   );
 }
