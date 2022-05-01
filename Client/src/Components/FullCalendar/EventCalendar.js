@@ -8,7 +8,7 @@ import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'; // needs additional webpack config!
 import bootstrap5Plugin from '@fullcalendar/bootstrap5';
-import "bootswatch/dist/materia/bootstrap.min.css";
+
 import Alert from "sweetalert2";
 import {
   CalendarContainer,
@@ -16,6 +16,7 @@ import {
   Objective,
   ObjectiveTitle,
 } from "../../Elements/CalendarElements";
+import "../../CSS/style.css"
 
 import esLocale from "@fullcalendar/core/locales/es";
 import "../../CSS/style.css";
@@ -91,11 +92,11 @@ class EventCalendar extends Component {
     Alert.fire({
       title: eventClick.event.title,
       html:
-        `<div class="table-responsive">
+        `<div class="table-responsives">
       <table class="table">
-      <tbody>
+      <tbody style="color: black;">
       <tr >
-      <td>Title</td>
+      <td>Title</td>  
       <td><strong>` +
         eventClick.event.title +
         `</strong></td>
@@ -130,13 +131,13 @@ class EventCalendar extends Component {
       <div className="animated fadeIn p-4 demo-app">
         <Row>
           <Col lg={3} sm={3} md={3}>
-            <ObjectiveContainer id="external-events">
+            <ObjectiveContainer id="external-events" className="card text-white bg-dark mb-3">
               <p align="center">
-                <ObjectiveTitle>Categorias</ObjectiveTitle>
+                <div className="card-header" >Categorias</div>
               </p>
               {this.state.events.map((event) => (
                 <Objective
-                  className="fc-event"
+                  className="fc-event card-text"
                   title={event.title}
                   data={event.id}
                   color={this.colorRGB}

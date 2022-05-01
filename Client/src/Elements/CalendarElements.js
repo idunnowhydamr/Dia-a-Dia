@@ -2,7 +2,6 @@
 import styled, { css } from "styled-components";
 
 const CalendarContainer = styled.div`
-  background: white;
   border-radius: 5px;
   box-shadow: 1px 0px 13px 9px rgba(0, 0, 0, 0.17);
   margin: 6.5em auto 0 auto;
@@ -10,8 +9,7 @@ const CalendarContainer = styled.div`
 `;
 
 const ObjectiveContainer = styled.div`
-  position: absolute;
-  z-index: 2;
+  margin: 6.5em auto 0 auto;
 `;
 
 const ObjectiveTitle = styled.h1`
