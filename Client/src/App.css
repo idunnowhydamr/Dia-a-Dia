@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 body{
   /*background: linear-gradient(90deg, rgba(20,13,139,1) 0%, rgba(30,47,191,1) 51%, rgba(20,13,139,1) 100%);
- */ overflow-x: hidden;
+ */ 
+ background-color: White;
+ overflow-x: hidden;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
