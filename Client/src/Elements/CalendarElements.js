@@ -4,12 +4,12 @@ import styled, { css } from "styled-components";
 const CalendarContainer = styled.div`
   border-radius: 5px;
   box-shadow: 1px 0px 13px 9px rgba(0, 0, 0, 0.17);
-  margin: 6.5em auto 0 auto;
+  margin: 2em auto 0 auto;
   max-width: 75%;
 `;
 
 const ObjectiveContainer = styled.div`
-  margin: 6.5em auto 0 auto;
+  margin: 2em auto 0 auto;
 `;
 
 const ObjectiveTitle = styled.h1`

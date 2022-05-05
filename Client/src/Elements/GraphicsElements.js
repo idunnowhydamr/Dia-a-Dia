@@ -1,5 +1,5 @@
 //Sirve para poner estilos a cada componente
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 const Container = styled.div`
   display: grid;
@@ -8,10 +8,23 @@ const Container = styled.div`
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
+
 `;
 const CardContainer = styled.div`
   width: 20rem;
-  margin: 9em auto 0 auto;
+  margin: 2em auto 0 auto;
+  text-align:center;
 `;
 
-export { CardContainer, Container };
+const Modal = styled.div`
+    width:500px;
+    display:none;
+    background:blue;
+${props =>
+  props.styleLine === "false" &&
+  css`
+    display:flex;
+  `}
+`;
+
+export { CardContainer, Container, Modal};

@@ -13,6 +13,8 @@ function Button(props) {
           onClick={props.onClick}
           className="text-center btn btn-dark m-2 rounded"
           type={props.type}
+          data-toggle={props.dataToggle} 
+          data-target={props.target}
         >
         {props.buttonText}
         </Buton>

@@ -44,7 +44,7 @@ const CoverH2 = styled.h2`
 
 const PInfo = styled.p`
   margin-top: 10px;
-  color: #fff;
+  color: #000;
   }
 `;
 
