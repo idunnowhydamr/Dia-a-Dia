@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import icon from '../../Images/icon.svg'
 
-import { A, LinkTo } from "../../Elements/HeaderElements";
+import "bootswatch/dist/litera/bootstrap.min.css";
+import { A, LinkTo} from "../../Elements/HeaderElements";
 
 import {
   Dropdown,
@@ -12,19 +12,20 @@ import {
   DropdownToggle,
 } from "reactstrap";
 
+import "../../CSS/style.css"
+
 export const Header = () => {
   const [dropdown, setDropdown] = useState(false);
   const abrirCerrar = () => {
     setDropdown(!dropdown);
   };
+   
 
   return (
     <Navbar
       collapseOnSelect
       expand="lg"
-      bg="dark"
-      variant="dark"
-      className="row d-flex flex-row "
+      className="row d-flex flex-row bg-dark"
     >
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
@@ -38,6 +39,9 @@ export const Header = () => {
             <A>Graficos</A>
           </LinkTo>
         </Nav>
+        <div className="d-none d-sm-none d-xs-none d-md-block p-0">
+  
+        </div>
         <Nav className="navbar-nav col-md-3 justify-content-center align-items-center">
           <LinkTo to="/Calendar">
             <A>Recordatorios</A>
