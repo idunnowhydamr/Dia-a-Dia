@@ -1,4 +1,5 @@
 {
+  "homepage":"https://github.com/idunnowhydamr/Dia-a-Dia",
   "name": "dia-a-dia",
   "version": "0.1.0",
   "private": true,
@@ -21,12 +22,12 @@
     "bootstrap-react": "^0.5.0-alpha.14",
     "bootswatch": "^5.1.3",
     "chart.js": "^3.7.1",
+    "jquery": "^3.6.0",
     "node-module": "^2.0.0",
     "node-modules": "^1.0.1",
     "react": "^17.0.2",
-    "react-chartjs-2": "^4.1.0",
-    "jquery": "^3.6.0",
     "react-bootstrap": "^2.3.1",
+    "react-chartjs-2": "^4.1.0",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.0",
@@ -39,7 +40,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +63,7 @@
     ]
   },
   "devDependencies": {
-    "css-loader": "^6.7.1"
+    "css-loader": "^6.7.1",
+    "gh-pages": "^3.2.3"
   }
 }
