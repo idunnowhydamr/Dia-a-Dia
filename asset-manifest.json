@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Dia-a-Dia/static/css/main.495d66d4.css",
-    "main.js": "/Dia-a-Dia/static/js/main.429afd4c.js",
+    "main.js": "/Dia-a-Dia/static/js/main.9b72a6fc.js",
     "static/js/787.954ad9d8.chunk.js": "/Dia-a-Dia/static/js/787.954ad9d8.chunk.js",
     "static/media/bootstrap-icons.woff?": "/Dia-a-Dia/static/media/bootstrap-icons.c1d7432ee75fa194e499.woff",
     "static/media/bootstrap-icons.woff2?": "/Dia-a-Dia/static/media/bootstrap-icons.a13b815539b49de48d23.woff2",
@@ -9,11 +9,11 @@
     "index.html": "/Dia-a-Dia/index.html",
     "static/media/wd1.svg": "/Dia-a-Dia/static/media/wd1.d7da189b759c757e596d.svg",
     "main.495d66d4.css.map": "/Dia-a-Dia/static/css/main.495d66d4.css.map",
-    "main.429afd4c.js.map": "/Dia-a-Dia/static/js/main.429afd4c.js.map",
+    "main.9b72a6fc.js.map": "/Dia-a-Dia/static/js/main.9b72a6fc.js.map",
     "787.954ad9d8.chunk.js.map": "/Dia-a-Dia/static/js/787.954ad9d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.495d66d4.css",
-    "static/js/main.429afd4c.js"
+    "static/js/main.9b72a6fc.js"
   ]
 }
