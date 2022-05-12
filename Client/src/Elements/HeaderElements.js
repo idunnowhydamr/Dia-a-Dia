@@ -12,19 +12,18 @@ const colors = {
   
 
 const LinkTo = styled(Link)`
-    outline: none;
-    text-decoration: none;
-    
+  outline: none;
+  text-decoration: none;
 `;
 const A = styled.a`
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.5em;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5em;
 `;
 
 const NavBar = styled(Navbar)`
---bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
 `;
 
 //Icons

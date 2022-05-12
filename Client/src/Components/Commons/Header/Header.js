@@ -21,6 +21,7 @@ export const Header = () => {
   const abrirCerrar = () => {
     setDropdown(!dropdown);
   };
+   
 
   return (
     <Navbar
@@ -40,6 +41,9 @@ export const Header = () => {
             <A><CalendarIcon/></A>
           </LinkTo>
         </Nav>
+        <div className="d-none d-sm-none d-xs-none d-md-block p-0">
+  
+        </div>
         <Nav className="navbar-nav col-md-3 justify-content-center align-items-center">
           <LinkTo to="/Graphics">
             <A><BellIcon/></A>

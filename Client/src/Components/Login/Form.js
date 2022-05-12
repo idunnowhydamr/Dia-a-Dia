@@ -42,7 +42,7 @@ const Form = () => {
           estateChange={passwordChange}
         />
         <div className="btn-group m-2 justify-content-center">
-          <Button buttonText="Iniciar" type="submit" />
+          <Button buttonText="Iniciar" type="submit" direccion="/Calendar" />
           <Button buttonText="Registrar" direccion="/Register" />
         </div>
       </Formulario>
