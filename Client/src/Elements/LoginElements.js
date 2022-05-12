@@ -1,5 +1,5 @@
 //Sirve para poner estilos a cada componente
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 
 const Cover = styled.div`
@@ -12,11 +12,15 @@ const ContainerCover = styled.div`
     max-width: 1200px;
     margin: 12.5% auto;
     padding-left: 5px;
-    display: flex;
-    justify-content: space-between;
     position: relative;
     background-size: cover;
     background-position: bottom;
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
   }
 `;
 

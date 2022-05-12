@@ -3,9 +3,9 @@ import { Route, Switch } from "react-router-dom";
 import Register from '../src/Pages/Register';
 import Login from '../src/Pages/Login';
 import Calendar from '../src/Pages/Calendar';
-import Development from '../src/Pages/Development'
-import User from '../src/Pages/User'
-import Graphics from '../src/Pages/Graphics'
+import Development from '../src/Pages/Development';
+import User from '../src/Pages/User';
+
 
 
 export default function App() {
@@ -16,7 +16,6 @@ export default function App() {
     <Route exact path="/Calendar" component={Calendar} />
     <Route exact path="/Progress" component={Development}/>
     <Route exact path="/User" component={User}/>
-    <Route exact path="/Graphics" component={Graphics}/>
     </Switch>
        
 

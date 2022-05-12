@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import LineChart from "../Components/Graphics/LineChart";
-import BarChart from "../Components/Graphics/BarChart";
-import DoughnutChart from "../Components/Graphics/DoughnutChart";
-import Header from "../Components/Commons/Header";
-import Footer from "../Components/Commons/Footer";
-import Button from "../Components/Commons/Button";
-import Modal from "../Components/Graphics/Modal";
-import dataProyect from "../utils/mocks/dataProyect";
-import { CardContainer, Container } from "../Elements/GraphicsElements";
+import LineChart from "./LineChart";
+import BarChart from "./BarChart";
+import DoughnutChart from "./DoughnutChart";
+import Button from "../Commons/Button"
+import Modal from "./Modal"
+import dataProyect from "../../utils/mocks/dataProyect";
+import { CardContainer, Container } from "../../Elements/GraphicsElements";
 
 function Graphics() {
   // Se crea un objeto de hooks para mostrar el modal
@@ -23,8 +21,6 @@ function Graphics() {
 
   return (
     <>
-      <Header />
-
       <Container>
         <CardContainer className="card bg-light">
           <LineChart className="card-img-top" />
@@ -69,7 +65,6 @@ function Graphics() {
           </div>
         </CardContainer>
       </Container>
-      <Footer data={dataProyect} />
     </>
   );
 }

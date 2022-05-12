@@ -1,6 +1,5 @@
 import React from "react";
 import "../../CSS/style.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
   Label,
@@ -49,6 +48,7 @@ const Input = ({validationIcon, estate, estateChange,label, placeholder, type, n
             valid={validationIcon}
             />
             <ValidationIcon 
+            //Error Cambio de icono
             icon={validationIcon === 'false' ? faTimesCircle : faCheckCircle} 
             valid={validationIcon}
             />

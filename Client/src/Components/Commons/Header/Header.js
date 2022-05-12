@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 
 import "bootswatch/dist/litera/bootstrap.min.css";
-import { A, LinkTo} from "../../Elements/HeaderElements";
+import { A, LinkTo} from "../../../Elements/HeaderElements";
+import BellIcon from "./Bell";
+import CalendarIcon from "./Calendars";
+import PigIcon from "./Pig";
 
 import {
   Dropdown,
@@ -11,7 +14,7 @@ import {
   DropdownToggle,
 } from "reactstrap";
 
-import "../../CSS/style.css"
+import "../../../CSS/style.css"
 
 export const Header = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -29,17 +32,17 @@ export const Header = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="navbar-nav col-md-3 justify-content-center align-items-center">
           <LinkTo to="/Progress">
-            <A>Progreso</A>
-          </LinkTo>
-        </Nav>
-        <Nav className="navbar-nav col-md-3 justify-content-center align-items-center">
-          <LinkTo to="/Graphics">
-            <A>Graficos</A>
+            <A><PigIcon/></A>
           </LinkTo>
         </Nav>
         <Nav className="navbar-nav col-md-3 justify-content-center align-items-center">
           <LinkTo to="/Calendar">
-            <A>Recordatorios</A>
+            <A><CalendarIcon/></A>
+          </LinkTo>
+        </Nav>
+        <Nav className="navbar-nav col-md-3 justify-content-center align-items-center">
+          <LinkTo to="/Graphics">
+            <A><BellIcon/></A>
           </LinkTo>
         </Nav>
         <Nav className="navbar-nav col-md-3 justify-content-center align-items-center">
