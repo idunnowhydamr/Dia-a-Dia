@@ -27,4 +27,8 @@ ${props =>
   `}
 `;
 
-export { CardContainer, Container, Modal};
+const TotalContainer = styled.div`
+  text-align: center;
+`;
+
+export { CardContainer, Container, Modal, TotalContainer};

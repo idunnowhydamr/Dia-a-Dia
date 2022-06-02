@@ -3,14 +3,17 @@ import cors from 'cors'
 //Importamos la conexion a la DB
 import db from "./database/db.js"
 //Importamos nuestro enrutador
-import userRoutes from './routes/routes.js'
+import userRoutes from './routes/userRoutes.js'
 
 const app = express()
 
-app.use(cors())
-app.use(express.json())
-app.use('/app', userRoutes)
+app.use(cors()) //Dar permisos para usar la api
+app.use(express.json()) //Admite formato json
 
+//Rutas
+app.use(userRoutes)
+
+//Autenticar conexion a la bd (Sequelize)
 try {
     await db.authenticate()
     console.log('Conexión exitosa a la DB')
@@ -18,8 +21,10 @@ try {
     console.log(`El error de conexion es: ${error}`)
 }
 
+//Probar conexion
 app.get('/', (req,res) => {
     res.send('Hola Word')
+
  })
 
 app.listen( 8000, () => {

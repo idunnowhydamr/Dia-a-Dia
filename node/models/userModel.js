@@ -11,6 +11,7 @@ const userModel = db.define('usuario', {
     segundo_apellido: { type: DataTypes.STRING },
     correo: { type: DataTypes.STRING },
     contrasena: { type: DataTypes.STRING },
+    usuario: { type: DataTypes.STRING }
 })
 
 export default userModel

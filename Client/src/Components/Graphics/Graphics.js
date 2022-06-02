@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import LineChart from "./LineChart";
 import BarChart from "./BarChart";
 import DoughnutChart from "./DoughnutChart";
-import Button from "../Commons/Button"
-import Modal from "./Modal"
+import Button from "../Commons/Button";
+import Modal from "../Commons/Modal";
 import dataProyect from "../../utils/mocks/dataProyect";
 import { CardContainer, Container } from "../../Elements/GraphicsElements";
 
@@ -33,7 +33,7 @@ function Graphics() {
             <Modal showw={show.showLine} toggleModal={toggleModal}>
               <LineChart />
             </Modal>
-            <Button onClick={toggleModal} buttonText="Ver" />
+            <Button onClick={toggleModal} buttonText="Ver" className="btn-dark" />
           </div>
         </CardContainer>
         <CardContainer className="card bg-light">
@@ -47,7 +47,7 @@ function Graphics() {
             <Modal showw={show.showBar} toggleModal={toggleModal1}>
               <BarChart />
             </Modal>
-            <Button onClick={toggleModal1} buttonText="Ver" />
+            <Button onClick={toggleModal1} buttonText="Ver" className="btn-dark" />
           </div>
         </CardContainer>
         <CardContainer className="card bg-light">
@@ -61,7 +61,7 @@ function Graphics() {
             <Modal showw={show.showDoughnut} toggleModal={toggleModal2}>
               <DoughnutChart />
             </Modal>
-            <Button onClick={toggleModal2} buttonText="Ver" />
+            <Button onClick={toggleModal2} buttonText="Ver" className="btn-dark"/>
           </div>
         </CardContainer>
       </Container>

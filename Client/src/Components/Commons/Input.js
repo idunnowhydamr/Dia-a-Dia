@@ -9,55 +9,49 @@ import {
   InputElement
 } from "../../Elements/Formulario";
 
-import {
-  faCheckCircle,
-  faTimesCircle
-} from "@fortawesome/free-solid-svg-icons";
+import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
-const Input = ({validationIcon, estate, estateChange,label, placeholder, type, name, bugLegend, regularExpression}) => {
-  const onChange = (e) => {
-    //Para sobreescribir el esatdo, agregado el objeto de estado anterior
-    estateChange({...estate, field: e.target.value});
-  }
+const Input = ({estado, cambiarEstado, tipo, label, placeholder, name, leyendaError, expresionRegular, funcion}) => {
+	const onChange = (e) => {
+		cambiarEstado({...estado, campo: e.target.value});
+	}
 
-  const validation = () => {
-    //Se ejecuta si exite una expresion regular
-    if(regularExpression){
-      //.tes() permite comprobar un valor contra la formula
-      if(regularExpression.test(estate)){
-        estateChange({...estate, valid: 'true'});
-      }else{
-        estateChange({...estate, valid: 'false'});
-      }
-    }
+	const validacion = () => {
+		if(expresionRegular){
+			if(expresionRegular.test(estado.campo)){
+				cambiarEstado({...estado, valido: 'true'});
+			} else {
+				cambiarEstado({...estado, valido: 'false'});
+			}
+		}
 
-  }
-  return (
-    <div>
-          <Label valid={validationIcon} >{label}</Label>
-          <GroupInput>
-            <InputElement 
-            className="form-control" 
-            type={type} placeholder={placeholder} 
-            id={name}
-            value={estate}
-            onChange={onChange}
-            //Se ejecuta cuando se levanta el dedo de la tecla
-            onKeyUp={validation}
-            onBlur={validation}
-            valid={validationIcon}
-            />
-            <ValidationIcon 
-            //Error Cambio de icono
-            icon={validationIcon === 'false' ? faTimesCircle : faCheckCircle} 
-            valid={validationIcon}
-            />
-          </GroupInput>
-          <BugLegend valid={validationIcon}>
-              {bugLegend}
-          </BugLegend>
-    </div>
-  );
+		if(funcion){
+			funcion();
+		}
+	}
+
+	return (
+		<div>
+			<Label htmlFor={name} valido={estado.valido}>{label}</Label>
+			<GroupInput>
+				<InputElement 
+					type={tipo}
+					placeholder={placeholder} 
+					id={name}
+					value={estado.campo}
+					onChange={onChange}
+					onKeyUp={validacion}
+					onBlur={validacion}
+					valido={estado.valido}
+				/>
+				<ValidationIcon
+					icon={estado.valido === 'true' ? faCheckCircle : faTimesCircle}
+					valido={estado.valido}
+				/>
+			</GroupInput>
+			<BugLegend valido={estado.valido}>{leyendaError}</BugLegend>
+		</div>
+	);
 }
-
+ 
 export default Input;
