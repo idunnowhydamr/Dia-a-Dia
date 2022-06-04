@@ -18,14 +18,15 @@ import Button from "../Commons/Button";
 import Modal from "../Commons/Modal";
 import Formulario from "./Form.js";
 import DeleteForm from "./DeleteForm";
-import AddEvent from "./AddEvent"
+import AddEvent from "./AddEvent";
+import DeleteEvent from "./DeleteEvent";
 
 //Elementos
 import {
   CalendarContainer,
   ObjectiveContainer,
   Objective,
-  ObjectiveTitle,
+  ObjectiveTitle
 } from "../../Elements/CalendarElements";
 import "../../CSS/style.css";
 
@@ -48,6 +49,15 @@ class EventCalendar extends Component {
     show: false,
     show1: false,
     show2: false,
+    show3: false,
+    eventDetail: [{
+      id: null,
+      nombre: null,
+      descripcion: null,
+      valor: null,
+      tipo: null,
+      fecha: null
+    }]
   };
 
   componentDidMount() {
@@ -61,23 +71,24 @@ class EventCalendar extends Component {
       itemSelector: ".fc-event",
 
       eventData: function (eventEl) {
+        //Propiedades del activo seleccionado
         let title = eventEl.getAttribute("title");
         let id = eventEl.getAttribute("data");
-        let color = eventEl.getAttribute("color");
         cookies.set("idActive", id, { path: "/" }); //Se configura el id del activo para que pueda ser usado en AddEvent.js
         return {
           title: title,
-          id: id,
-          color: color,
+          id: id
         };
       },
     });
-  }
 
+    
+  }
   //Funciones para que abra y cierre cada modal
-  toggleModal = () => this.setState({ show: !this.state.show });
-  toggleModal1 = () => this.setState({ show1: !this.state.show1 });
-  toggleModal2 = () => this.setState({ show2: !this.state.show2 });
+  toggleModal = () => this.setState({ show: !this.state.show });//Modal para agregar activo
+  toggleModal1 = () => this.setState({ show1: !this.state.show1 });//Modal para eliminar activo
+  toggleModal2 = () => this.setState({ show2: !this.state.show2 });//Modal para agregar evento al calendario
+  toggleModal3 = () => this.setState({ show3: !this.state.show3 });//Modal para ver detalles del evento
 
   //Metodo para obtener los eventos del calendario
   getEvents = async () => {
@@ -89,7 +100,7 @@ class EventCalendar extends Component {
       })
       //Recibimos los datos retornados y se guardan en el parametro
       .then((events) => {
-        this.setState({ calendarEvents: events });
+        this.setState({ calendarEvents: events});
       });
   };
   //Metodo para obtener los activos del usuario.
@@ -108,17 +119,17 @@ class EventCalendar extends Component {
   };
 
   /**
-   * Funcion para generar numero aleatorio.
+   * Funcion para generar numero aleatorio y se redondea.
    */
 
   generarNumero = (numero) => {
-    return (Math.random() * numero).toFixed(0);
+    return (Math.random() * numero).toFixed(0); 
   };
   /**
    * Funcion para crear color RGB.
    */
   colorRGB = () => {
-    var coolor =
+    var color =
       "(" +
       this.generarNumero(255) +
       "," +
@@ -126,53 +137,27 @@ class EventCalendar extends Component {
       "," +
       this.generarNumero(255) +
       ")";
-    return "rgb" + coolor;
+    return "rgb" + color;
   };
 
   /**
    * when we click on event we are displaying event details
    */
   eventClick = (eventClick) => {
-    Alert.fire({
-      title: eventClick.event.title,
-      html:
-        `<div class="table-responsives">
-      <table class="table">
-      <tbody style="color: black;">
-      <tr >
-      <td>Title</td>  
-      <td><strong>` +
-        eventClick.event.objetivo +
-        `</strong></td>
-      </tr>
-      <tr >
-      <td>Start Time</td>
-      <td><strong>
-      ` +
-        eventClick.event.start +
-        `
-      </strong></td>
-      </tr>
-      </tbody>
-      </table>
-      </div>`,
-
-      showCancelButton: true,
-      confirmButtonColor: "#d33",
-      cancelButtonColor: "#3085d6",
-      confirmButtonText: "Remove Event",
-      cancelButtonText: "Close",
-    }).then((result) => {
-      if (result.value) {
-        eventClick.event.remove(); // It will remove event from the calendar
-        Alert.fire("Deleted!", "Your Event has been deleted.", "success");
-      }
-    });
+    //Se configuran las variables con los datos recibidos del Metodo getEvents
+    this.setState({ eventDetail: [{
+      id: eventClick.event.id,
+      nombre: eventClick.event.title,
+      descripcion: eventClick.event.extendedProps.objetivo,
+      valor: eventClick.event.extendedProps.valor,
+      tipo: eventClick.event.extendedProps.accion,
+      fecha: eventClick.event.start.toString()
+    }]
+  });
+  //A diferencia de los otros metodos para desplegar,este se debe ejecutar dentro de otro metodo que reciba un parametro con el objeto de evento, que contendra las caracteriticas del evento seleccionado en el calendario
+  this.toggleModal3();
   };
 
-  eventDrop = () => {
-    this.toggleModal2();
-  };
 
   render() {
     return (
@@ -205,6 +190,9 @@ class EventCalendar extends Component {
               </Modal>
               <Modal showw={this.state.show2} toggleModal={this.toggleModal2}>
                 <AddEvent/>
+              </Modal>
+              <Modal showw={this.state.show3} toggleModal={this.toggleModal3}>
+                <DeleteEvent nombre={this.state.eventDetail[0].nombre} descripcion={this.state.eventDetail[0].descripcion} accion={this.state.eventDetail[0].tipo} fecha={this.state.eventDetail[0].fecha} eventoId={this.state.eventDetail[0].id} valor={this.state.eventDetail[0].valor}/>
               </Modal>
               <div className="btn-group m-4 justify-content-center">
                 <Button
@@ -247,12 +235,11 @@ class EventCalendar extends Component {
                 ref={this.calendarComponentRef}
                 weekends={this.state.calendarWeekends}
                 events={this.state.calendarEvents}
-                //Se pone la misma funcion para que se pueda ejecutar
-                eventDrop={this.eventDrop}
-                eventReceive={this.eventDrop}
+                //eventDrop={this.toggleModal2}//Cuando el evento existe y se mueve dentro del calendario
+                eventReceive={this.toggleModal2}//Cuando se va agregar evento
                 eventClick={this.eventClick}
-                // selectable={true}
                 height="550px"
+                eventColor="#378006"
               />
             </CalendarContainer>
           </Col>

@@ -82,7 +82,7 @@ export const addActive = async (req, res) => {
 export const getObjetives = async (req, res) => {
   try {
     const objetive = await sequelize.query(
-      `SELECT objetivos.id, objetivos.objetivo, objetivos.fecha AS 'start', activos.nombre AS 'title', acciones.accion FROM objetivos INNER JOIN activos ON objetivos.activoId = activos.id INNER JOIN usuarios ON activos.usuarioId = usuarios.id INNER JOIN acciones ON activos.accionId = acciones.id WHERE usuarios.id= ${req.params.userId}`,
+      `SELECT objetivos.id, objetivos.objetivo, objetivos.fecha AS 'start', activos.nombre AS 'title', activos.valor,acciones.accion FROM objetivos INNER JOIN activos ON objetivos.activoId = activos.id INNER JOIN usuarios ON activos.usuarioId = usuarios.id INNER JOIN acciones ON activos.accionId = acciones.id WHERE usuarios.id= ${req.params.userId}`,
       {
         type: sequelize.QueryTypes.SELECT,
       }

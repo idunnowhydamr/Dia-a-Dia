@@ -57,7 +57,7 @@ const AddEvent = () => {
 
   return (
     <main className=" content justify-content-center bg-dark">
-      <Title className="text-light" style={{ marginBottom:"20px", marginTop:"20px" }}>Agregar Activo</Title>
+      <Title className="text-light" style={{ marginBottom:"20px", marginTop:"20px" }}>Agregar Objetivo</Title>
       <Formulario action="" className="d-flex bg-light p-4" style={{ marginRight:"30px",marginBottom:"20px"}}>
         <div className="align-items:center justify-content:center" >
         <Input
