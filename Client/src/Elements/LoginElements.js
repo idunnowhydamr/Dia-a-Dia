@@ -1,5 +1,5 @@
 //Sirve para poner estilos a cada componente
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 
 const Cover = styled.div`
@@ -12,11 +12,15 @@ const ContainerCover = styled.div`
     max-width: 1200px;
     margin: 12.5% auto;
     padding-left: 5px;
-    display: flex;
-    justify-content: space-between;
     position: relative;
     background-size: cover;
     background-position: bottom;
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
   }
 `;
 
@@ -25,6 +29,11 @@ const ContainerInfo = styled.div`
   margin-top: 20px;
   z-index: 2;
   }
+  @media (max-width: 800px) {
+    text-align: center;
+    margin: 0 auto;
+  }
+  
 `;
 
 const CoverH1 = styled.h1`
@@ -32,6 +41,10 @@ const CoverH1 = styled.h1`
   font-size: 60px;
   font-weight: 900;
   color: #000;
+  @media (max-width: 800px) {
+    font-size: 30px;
+    margin-top: 40px;
+  }
   }
 `;
 const CoverH2 = styled.h2`
@@ -39,12 +52,19 @@ const CoverH2 = styled.h2`
   font-weight: 900;
   color: #FEBA0B;
   margin-top: -30px;
+  @media (max-width: 800px) {
+    font-size: 30px;
+    margin-top: -15px;
+  }
   }
 `;
 
 const PInfo = styled.p`
   margin-top: 10px;
   color: #000;
+  @media (max-width: 800px) {
+    font-size: 0.938em;
+  }
   }
 `;
 

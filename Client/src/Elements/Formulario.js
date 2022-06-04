@@ -20,6 +20,7 @@ const Formulario = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
@@ -33,7 +34,7 @@ const Label = styled.label`
   cursor: pointer;
 
   ${props =>
-    props.valid === "false" &&
+    props.valido === "false" &&
     css`
       color: ${colors.error};
     `}
@@ -64,12 +65,12 @@ const InputElement = styled.input`
   //Accedemos a las propiedades del input
   //Comprobamos el valor valido, si se cumple se ejecuta codigo css
   ${props =>
-    props.valid === "true" &&
+    props.valido === "true" &&
     css`
       border: 3px solid transparent;
     `}
   ${props =>
-    props.valid === "false" &&
+    props.valido === "false" &&
     css`
       border: 3px solid ${colors.error} !important;
     `}
@@ -82,13 +83,13 @@ const BugLegend = styled.p`
   //Se pone none porque no queremos que se muestre por defecto
   display: none;
   ${props =>
-    props.valid === "true" &&
+    props.valido === "true" &&
     css`
       display: none;
     `}
 
   ${props =>
-    props.valid === "false" &&
+    props.valido === "false" &&
     css`
       display: block;
     `}
@@ -103,14 +104,14 @@ const ValidationIcon = styled(FontAwesomeIcon)`
   opacity: 0;
   
   ${props =>
-    props.valid === "false" &&
+    props.valido === "false" &&
     css`
       opacity: 1;
       color: ${colors.error};
     `}
     
   ${props =>
-    props.valid === "true" &&
+    props.valido === "true" &&
     css`
       opacity: 1;
       color: ${colors.success};

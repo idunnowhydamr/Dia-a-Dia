@@ -11,7 +11,7 @@ function Button(props) {
       <Link to={props.direccion}>
         <Buton
           onClick={props.onClick}
-          className="text-center btn btn-dark m-2 rounded"
+          className={props.className}
           type={props.type}
           data-toggle={props.dataToggle} 
           data-target={props.target}
