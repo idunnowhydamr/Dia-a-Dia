@@ -1,7 +1,7 @@
-import {Sequelize} from 'sequelize';
+import {Sequelize} from 'sequelize-oracle';
 
-const db = new Sequelize('dia_a_dia', 'root', '', {
-    host:'localhost',
+const db = new Sequelize('dia-a-dia', 'C#DORTIZLO', '12345', {
+    host:'localhost:1521',
     dialect: 'mysql'
 })
 

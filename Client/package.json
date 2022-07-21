@@ -1,5 +1,5 @@
 {
-  "homepage":"https://idunnowhydamr.github.io/Dia-a-Dia",
+  "homepage": "https://idunnowhydamr.github.io/Dia-a-Dia",
   "name": "dia-a-dia",
   "version": "0.1.0",
   "private": true,
@@ -34,6 +34,7 @@
     "reactstrap": "^9.0.2",
     "styled-components": "^5.3.5",
     "sweetalert2": "^11.4.9",
+    "universal-cookie": "^4.0.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

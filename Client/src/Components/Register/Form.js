@@ -7,7 +7,7 @@ import Alert from "sweetalert2";
 
 //URL de la api
 const api = axios.create({
-  baseURL: `http://localhost:8000/`
+  baseURL: `http://localhost:2020/`
 })
 
 //HOOKS para el formulario
@@ -44,7 +44,7 @@ const Form = () => {
 			email.valido === 'true'
 		){
       try {
-        await api.post('register/', {
+        await api.post('/register', {
           usuario: user.campo,
           nombre1: name1.campo,
           nombre2: name2.campo,
@@ -54,6 +54,7 @@ const Form = () => {
           password: password.campo,
           password2: password2.campo 
         })
+
         Alert.fire({
           icon: 'success',
           title: 'Registrado Correctamente.',

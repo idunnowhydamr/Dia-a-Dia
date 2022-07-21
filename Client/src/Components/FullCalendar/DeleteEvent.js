@@ -6,7 +6,7 @@ import Alert from "sweetalert2";
 
 //URL de la api
 const api = axios.create({
-  baseURL: `http://localhost:8000/`,
+  baseURL: `http://localhost:2020/`,
 });
 
 //HOOKS para el formulario
@@ -18,6 +18,7 @@ const DeleteEvent = (props) => {
       .delete(`event/${props.eventoId}`)
       //Se recibe la respuesta
       .then((response) => {
+        console.log("Id evento" +props.eventoId);
         Alert.fire({
           icon: "success",
           title: `${response.data.msg}`,
@@ -30,6 +31,7 @@ const DeleteEvent = (props) => {
       })
 
       .catch((error) => {
+        console.log("Id evento" +props.eventoId);
         if (error.response) {
           //Se recibe error programado desde el backend
           Alert.fire({

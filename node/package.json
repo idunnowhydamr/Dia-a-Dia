@@ -14,8 +14,10 @@
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.3",
+    "instantclient": "^1.0.2",
     "mysql2": "^2.3.3",
-    "nodemon": "^2.0.15",
-    "sequelize": "^6.17.0"
+    "nodemon": "^2.0.16",
+    "sequelize": "^6.21.3",
+    "sequelize-oracle": "^3.3.2-0.0"
   }
 }

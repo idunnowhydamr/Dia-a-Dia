@@ -14,7 +14,7 @@ import { Formulario, Title} from "../../Elements/Formulario";
 
 //URL de la api
 const api = axios.create({
-  baseURL: `http://localhost:8000/`,
+  baseURL: `http://localhost:2020/`,
 });
 
 //HOOKS para el formulario
@@ -26,9 +26,14 @@ const AddEvent = () => {
   const cookies = new Cookies();
   const activeId = cookies.get("idActive"); //Cookies enviada desde EventCalendar.js
 
+  function formato(texto){
+    return texto.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1');
+
+  }
+
   const onSubmit = async () =>{
     //Se hace peticion a la api
-    await api.post('event/', {objetive: eventObjetive.campo,date: date.campo, IdActivo: activeId})
+    await api.post('/event', {objetive: eventObjetive.campo,date1: formato(date.campo), IdActivo: activeId})
      //Se recibe la respuesta
      .then(response => {
       Alert.fire({

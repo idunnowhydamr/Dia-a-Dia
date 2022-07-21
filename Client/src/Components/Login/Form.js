@@ -10,7 +10,7 @@ import { Formulario, Title } from "../../Elements/Formulario";
 
 //URL de la api
 const api = axios.create({
-  baseURL: `http://localhost:8000/`
+  baseURL: `http://localhost:2020/`
 })
 
 //Instacia de las cookies
@@ -45,7 +45,7 @@ const Form = () => {
       if(response.length > 0){//Siginifica que inicio sesion de forma correcta
 
         //Se guardan las variables de sesion
-        var respuesta = response[0];
+        let respuesta = response[0];
         cookies.set('id', respuesta.id, {path: "/"}) //Para que los atributos sean acesibles en cual pestañana se pone path
         cookies.set('primer_nombre', respuesta.primer_nombre, {path: "/"}) 
         cookies.set('primer_apellido', respuesta.primer_apellido, {path: "/"})
